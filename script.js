@@ -1,8 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     const navToggle = document.getElementById('navToggle');
     const navLinks = document.getElementById('navLinks');
-    const emailForm = document.getElementById('emailForm');
-    const formMessage = document.getElementById('formMessage');
 
     navToggle.addEventListener('click', function() {
         navLinks.classList.toggle('active');
@@ -12,19 +10,6 @@ document.addEventListener('DOMContentLoaded', function() {
         link.addEventListener('click', () => {
             navLinks.classList.remove('active');
         });
-    });
-
-    emailForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        const email = document.getElementById('emailInput').value;
-        
-        formMessage.textContent = 'Thanks for signing up! We\'ll keep you updated.';
-        formMessage.style.color = '#28a745';
-        emailForm.reset();
-        
-        setTimeout(() => {
-            formMessage.textContent = '';
-        }, 5000);
     });
 
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
